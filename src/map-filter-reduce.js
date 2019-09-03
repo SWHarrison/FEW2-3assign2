@@ -39,3 +39,4 @@ mapInventoryToString(inventory).forEach((item) => {
   console.log(item)
 })
 
+export {countCategory}

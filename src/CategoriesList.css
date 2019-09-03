@@ -1,0 +1,13 @@
+.CategoriesList{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.CategoriesList div{
+  width: auto;
+  margin: 2px 4px;
+  padding: 2px 4px;
+  background-color: #1a8;
+  font-size: 18px;
+}

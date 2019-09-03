@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import inventory, { categories } from './inventory'
 import './App.css';
-//import InvItem from './InvItem'
+import InvList from './InvList'
 import CategoriesList from './CategoriesList'
 
 class App extends Component {
@@ -10,14 +10,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Show products here</h1>
+        <CategoriesList categoriesList = {categories} />
 
-        <ul>
-          <CategoriesList categoriesList = {categories} />
-        </ul>
-
-        <ul>
-          {/* Products listed here */}
-        </ul>
+        <InvList inventory = {inventory} />
 
       </div>
     );
