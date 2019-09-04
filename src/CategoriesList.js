@@ -5,12 +5,18 @@ import './CategoriesList.css'
 
 function CategoriesList(props) {
   const categories = props.categoriesList;
-  categories.push("All")
   const listItems = categories.map((category) => {
 
-    const num = countCategory(inventory,category)
+    let num;
+    if(category != 'All'){
+      num = countCategory(inventory,category)
+    } else {
+      num = inventory.length;
+    }
     return (
-      <div>
+      <div onClick={() => {
+        props.setCategory(category)
+      }}>
         <div>{category}</div>
         <div>{num}</div>
       </div>

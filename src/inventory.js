@@ -90,7 +90,9 @@ var c = inventory.map((item) => {
   return item.category
 })
 
-export var categories = _.uniq(c)
+let categoriesNoAll = _.uniq(c)
+categoriesNoAll.push("All")
+export var categories = categoriesNoAll
 export default inventory
 
 // console.log(inventory)
