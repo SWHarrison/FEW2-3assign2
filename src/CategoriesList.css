@@ -4,10 +4,14 @@
   width: 100%;
 }
 
-.CategoriesList div{
+.CategoriesList *{
   width: auto;
   margin: 2px 4px;
   padding: 2px 4px;
   background-color: #1a8;
   font-size: 18px;
+}
+
+.selected{
+  border: 5px solid #2da
 }

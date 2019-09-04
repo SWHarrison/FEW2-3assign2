@@ -14,12 +14,14 @@ class App extends Component {
   }
 
   render() {
-    console.log('rendering app '+this.state.currentCategory)
-    console.log(inventory.filter(item => this.state.currentCategory == "All" || item.category == this.state.currentCategory))
+    const { currentCategory } = this.state
+
+    console.log('rendering app '+currentCategory)
     return (
       <div className="App">
         <h1>Show products here</h1>
         <CategoriesList
+          selected = {currentCategory}
           categoriesList = {categories}
           setCategory={(cat) => {
             this.setState({ currentCategory: cat })
