@@ -2,6 +2,7 @@ import React from 'react'
 
 function InvList(props) {
   const inventory = props.inventory;
+  console.log(inventory)
   const listItems = inventory.map(({name, price, description}) => {
 
     return (

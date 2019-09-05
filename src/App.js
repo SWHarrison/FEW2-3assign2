@@ -9,7 +9,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      currentCategory: 'All'
+      currentCategory: []
     }
   }
 
@@ -24,11 +24,30 @@ class App extends Component {
           selected = {currentCategory}
           categoriesList = {categories}
           setCategory={(cat) => {
-            this.setState({ currentCategory: cat })
+            console.log(categories)
+            let newCat = this.state.currentCategory
+            if(cat == "All"){
+              if(newCat.includes("All")){
+                newCat = []
+              } else {
+                newCat = categories.slice(0)
+              }
+            } else if(this.state.currentCategory.includes(cat) == false){
+              newCat.push(cat)
+            } else {
+              newCat.splice(newCat.indexOf(cat),1)
+              if(newCat.includes("All")){
+                newCat.splice(newCat.indexOf("All"),1)
+              }
+            }
+            console.log(newCat)
+            this.setState({ currentCategory : newCat})
           }}
         />
 
-        <InvList inventory = {inventory.filter(item => this.state.currentCategory == "All" || item.category == this.state.currentCategory)} />
+        <InvList inventory = {inventory.filter(item =>
+          //this.state.currentCategory.length == 0 ||
+          this.state.currentCategory.includes(item.category))} />
 
       </div>
     );

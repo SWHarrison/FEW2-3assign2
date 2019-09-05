@@ -7,7 +7,6 @@ function CategoriesList(props) {
   const categories = props.categoriesList;
   const listItems = categories.map((category) => {
 
-    console.log(category + " equals " + props.selected + ": " + (category == props.selected))
     let num;
     if(category != 'All'){
       num = countCategory(inventory, category)
@@ -16,10 +15,10 @@ function CategoriesList(props) {
     }
     return (
       <div
-        className={category == props.selected ? 'selected' : ''}
+        className={props.selected.includes(category) ? 'selected' : ''}
         onClick={() => {
-        props.setCategory(category)
-      }}>
+          props.setCategory(category)
+        }}>
         <div>{category}</div>
         <div>{num}</div>
       </div>
