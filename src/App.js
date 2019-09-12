@@ -30,7 +30,9 @@ class App extends Component {
               if(newCat.includes("All")){
                 newCat = []
               } else {
-                newCat = categories.slice(0)
+                newCat = [ ...categories ] // Creates shallow copy of array
+                // obj = {a:1, b:2, c: 3}
+                // objCopy = { e: 44, ...obj, a: 11, d: 33 }
               }
             } else if(this.state.currentCategory.includes(cat) == false){
               newCat.push(cat)
